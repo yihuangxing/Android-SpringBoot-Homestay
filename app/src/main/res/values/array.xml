@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinnerclass">
+        <item>1楼-11号</item>
+        <item>2楼-12号</item>
+        <item>3楼-13号</item>
+        <item>4楼-14号</item>
+        <item>5楼-15号</item>
+        <item>6楼-16号</item>
+        <item>7楼-17号</item>
+        <item>8楼-18号</item>
+
+    </string-array>
+    
+</resources>
