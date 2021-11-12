@@ -10,10 +10,16 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        app:titleTextColor="@color/white"
         android:background="@color/teal_200"
-        app:navigationIcon="@mipmap/back" />
+        app:navigationIcon="@mipmap/back"
+        app:titleTextColor="@color/white" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/logo" />
 
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -44,6 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
+                android:text="yihuangxing"
                 android:digits="qwertyuiopasdfghjklzxcvbnm1234567890"
                 android:hint="请输入用户名"
                 android:paddingLeft="10dp"
@@ -56,7 +63,6 @@
             android:layout_width="320dp"
             android:layout_height="55dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
             android:background="@drawable/et_bg"
             android:paddingLeft="10dp"
             android:paddingRight="10dp">
@@ -70,12 +76,14 @@
                 android:textSize="15sp" />
 
             <EditText
-                android:gravity="center_vertical"
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
+                android:text="123456"
                 android:digits="qwertyuiopasdfghjklzxcvbnm1234567890"
+                android:gravity="center_vertical"
+                android:inputType="textPassword"
                 android:hint="请输入6-16位字母+数字"
                 android:paddingLeft="10dp"
                 android:textColor="#333"
@@ -87,7 +95,6 @@
             android:layout_width="320dp"
             android:layout_height="55dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
             android:background="@drawable/et_bg"
             android:paddingLeft="10dp"
             android:paddingRight="10dp">
@@ -101,24 +108,90 @@
                 android:textSize="15sp" />
 
             <EditText
-                android:id="@+id/comfpwd"
+                android:id="@+id/confirmpwd"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:digits="qwertyuiopasdfghjklzxcvbnm1234567890"
-                android:hint="请输入6-16位字母+数字"
                 android:gravity="center_vertical"
+                android:hint="请输入6-16位字母+数字"
+                android:paddingLeft="10dp"
+                android:inputType="textPassword"
+                android:text="123456"
+                android:textColor="#333"
+                android:textSize="15sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="320dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/et_bg"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="手机号："
+                android:textColor="#333"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/mobile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:digits="1234567890"
+                android:gravity="center_vertical"
+                android:hint="请输入手机号"
+                android:maxLength="11"
+                android:text="13764664731"
                 android:paddingLeft="10dp"
                 android:textColor="#333"
                 android:textSize="15sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="320dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/et_bg"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="邮箱："
+                android:textColor="#333"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请输入邮箱地址"
+                android:text="12345678@qq.com"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10dp"
+                android:textColor="#333"
+                android:textSize="15sp" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
         <RelativeLayout
             android:layout_width="320dp"
             android:layout_height="55dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
             android:background="@drawable/et_bg"
             android:paddingLeft="10dp"
             android:paddingRight="10dp">
@@ -138,7 +211,7 @@
                 android:id="@+id/et_code"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_toLeftOf="@id/tv_code"
+                android:layout_toLeftOf="@id/iv_code"
                 android:layout_toRightOf="@id/code"
                 android:background="@null"
                 android:gravity="center_vertical"
@@ -148,7 +221,7 @@
 
 
             <ImageView
-                android:id="@+id/tv_code"
+                android:id="@+id/iv_code"
                 android:layout_width="80dp"
                 android:layout_height="@dimen/dp_40"
                 android:layout_alignParentRight="true"
@@ -159,109 +232,8 @@
         </RelativeLayout>
 
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="320dp"
-            android:layout_height="55dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/et_bg"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="手机号："
-                android:textColor="#333"
-                android:textSize="15sp" />
-
-            <EditText
-                android:id="@+id/phone"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:digits="1234567890"
-                android:hint="请输入手机号"
-                android:maxLength="11"
-                android:gravity="center_vertical"
-                android:paddingLeft="10dp"
-                android:textColor="#333"
-                android:textSize="15sp" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="320dp"
-            android:layout_height="55dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/et_bg"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="性别："
-                android:textColor="#333"
-                android:textSize="15sp" />
-
-            <RadioGroup
-                android:id="@+id/radioGroup"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/rad_man"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="男" />
-
-                <RadioButton
-                    android:id="@+id/rad_wowan"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="女" />
-
-            </RadioGroup>
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="320dp"
-            android:layout_height="55dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/et_bg"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="住址/宿舍楼："
-                android:textColor="#333"
-                android:textSize="15sp" />
-
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:entries="@array/spinnerclass" />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-
         <Button
+            android:id="@+id/register"
             android:layout_width="320dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"

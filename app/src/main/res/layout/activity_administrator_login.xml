@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.AdministratorLoginActivity">
+    tools:context=".activity.AdminLoginActivity">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -36,9 +36,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="50dp"
-        android:src="@mipmap/ic_launcher" />
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:src="@mipmap/logo" />
 
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -55,12 +55,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
+            android:drawableLeft="@mipmap/img_user"
             android:gravity="center"
-            android:text="用户名："
+            android:text="  用户名："
             android:textColor="@color/text_color_2" />
 
 
         <EditText
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
@@ -86,12 +88,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
+            android:drawableLeft="@mipmap/img_pwd"
             android:gravity="center"
-            android:text="密码："
+            android:text="  密码："
             android:textColor="@color/text_color_2" />
 
 
         <EditText
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
@@ -111,7 +115,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/userLogin"
+            android:id="@+id/login"
             android:layout_width="320dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
@@ -125,10 +129,12 @@
             android:id="@+id/register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/userLogin"
+            android:layout_below="@id/login"
             android:layout_alignParentRight="true"
             android:padding="10dp"
-            android:text="注册?" />
+            android:text="注册?"
+            android:textColor="@color/purple_700"
+            android:textSize="13sp" />
     </RelativeLayout>
 
 
