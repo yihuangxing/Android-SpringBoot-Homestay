@@ -47,4 +47,6 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.github.lygttpod:SuperTextView:2.4.6'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
