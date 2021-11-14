@@ -3,9 +3,10 @@ package com.app.android.homestay;
 import android.content.Intent;
 import android.view.View;
 
-import com.app.android.homestay.activity.HouseListActivity;
+import com.app.android.homestay.activity.AdminHouseListActivity;
+import com.app.android.homestay.activity.FeedBookActivity;
 import com.app.android.homestay.activity.OrderListActivity;
-import com.app.android.homestay.activity.UserListActivity;
+import com.app.android.homestay.activity.AdminUserListActivity;
 import com.app.android.homestay.base.BaseActivity;
 
 public class AdminMainActivity extends BaseActivity {
@@ -26,7 +27,8 @@ public class AdminMainActivity extends BaseActivity {
         findViewById(R.id.float1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(mActivity, HouseListActivity.class));
+//                startActivity(new Intent(mActivity, HouseListActivity.class));
+                startActivity(new Intent(mActivity, AdminHouseListActivity.class));
             }
         });
 
@@ -40,14 +42,16 @@ public class AdminMainActivity extends BaseActivity {
         findViewById(R.id.float3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(mActivity, OrderListActivity.class));
+                startActivity(new Intent(mActivity, FeedBookActivity.class));
             }
         });
 
         findViewById(R.id.float4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(mActivity, UserListActivity.class));
+
+
+                startActivity(new Intent(mActivity, AdminUserListActivity.class));
             }
         });
 

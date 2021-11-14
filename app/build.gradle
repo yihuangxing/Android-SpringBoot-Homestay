@@ -37,7 +37,6 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    implementation project(path: ':navigation')
 
     implementation 'com.lzy.net:okgo:3.0.4'
     implementation 'io.github.lucksiege:pictureselector:v2.7.3-rc05'
@@ -49,4 +48,7 @@ dependencies {
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
 
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.2.0'
+
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
 }

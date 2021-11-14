@@ -20,16 +20,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="用户管理"
+            android:text="房间管理列表"
             android:textColor="@color/white"
             android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="添加"
+            android:padding="10dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
 
 
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        tools:listitem="@layout/admin_user_list_item"
+        tools:listitem="@layout/admin_house_item"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
