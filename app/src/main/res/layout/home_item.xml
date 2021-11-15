@@ -26,11 +26,14 @@
                 android:src="@mipmap/img_1" />
 
             <ImageView
-                android:layout_margin="10dp"
-                android:layout_alignParentRight="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/u_like"/>
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@mipmap/u_like" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
@@ -116,10 +119,11 @@
                     android:layout_height="30dp"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="10dp"
                     android:background="@color/purple_700"
                     android:gravity="center"
                     android:text="预定"
+                    android:textStyle="bold"
                     android:textColor="@color/white" />
 
             </RelativeLayout>

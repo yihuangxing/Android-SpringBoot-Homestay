@@ -15,7 +15,7 @@
         <entry key="app/src/main/res/layout/admin_house_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/admin_user_list_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/home_item.xml" value="0.10833333333333334" />
+        <entry key="app/src/main/res/layout/home_item.xml" value="0.25" />
       </map>
     </option>
   </component>
