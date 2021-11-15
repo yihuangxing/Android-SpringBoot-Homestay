@@ -1,0 +1,45 @@
+com/ashokvarma/bottomnavigation/BadgeItem.java
+ com.ashokvarma.bottomnavigation.BadgeItem
+ com.ashokvarma.bottomnavigation.BadgeItem$1
+com/ashokvarma/bottomnavigation/FixedBottomNavigationTab.java
+ com.ashokvarma.bottomnavigation.FixedBottomNavigationTab
+com/ashokvarma/bottomnavigation/behaviour/BottomNavBarFabBehaviour.java
+ com.ashokvarma.bottomnavigation.behaviour.BottomNavBarFabBehaviour
+com/ashokvarma/bottomnavigation/BottomNavigationBar.java
+ com.ashokvarma.bottomnavigation.BottomNavigationBar
+ com.ashokvarma.bottomnavigation.BottomNavigationBar$1
+ com.ashokvarma.bottomnavigation.BottomNavigationBar$2
+ com.ashokvarma.bottomnavigation.BottomNavigationBar$BackgroundStyle
+ com.ashokvarma.bottomnavigation.BottomNavigationBar$FabBehaviour
+ com.ashokvarma.bottomnavigation.BottomNavigationBar$Mode
+ com.ashokvarma.bottomnavigation.BottomNavigationBar$OnTabSelectedListener
+ com.ashokvarma.bottomnavigation.BottomNavigationBar$SimpleOnTabSelectedListener
+com/ashokvarma/bottomnavigation/behaviour/BottomVerticalScrollBehavior.java
+ com.ashokvarma.bottomnavigation.behaviour.BottomVerticalScrollBehavior
+ com.ashokvarma.bottomnavigation.behaviour.BottomVerticalScrollBehavior$1
+com/ashokvarma/bottomnavigation/BottomNavigationTab.java
+ com.ashokvarma.bottomnavigation.BottomNavigationTab
+ com.ashokvarma.bottomnavigation.BottomNavigationTab$1
+ com.ashokvarma.bottomnavigation.BottomNavigationTab$2
+com/ashokvarma/bottomnavigation/ShiftingBottomNavigationTab.java
+ com.ashokvarma.bottomnavigation.ShiftingBottomNavigationTab
+ com.ashokvarma.bottomnavigation.ShiftingBottomNavigationTab$ResizeWidthAnimation
+com/ashokvarma/bottomnavigation/BottomNavigationHelper.java
+ com.ashokvarma.bottomnavigation.BottomNavigationHelper
+ com.ashokvarma.bottomnavigation.BottomNavigationHelper$1
+com/ashokvarma/bottomnavigation/utils/Utils.java
+ com.ashokvarma.bottomnavigation.utils.Utils
+com/ashokvarma/bottomnavigation/BuildConfig.java
+ com.ashokvarma.bottomnavigation.BuildConfig
+com/ashokvarma/bottomnavigation/ShapeBadgeItem.java
+ com.ashokvarma.bottomnavigation.ShapeBadgeItem
+ com.ashokvarma.bottomnavigation.ShapeBadgeItem$Shape
+com/ashokvarma/bottomnavigation/behaviour/VerticalScrollingBehavior.java
+ com.ashokvarma.bottomnavigation.behaviour.VerticalScrollingBehavior
+ com.ashokvarma.bottomnavigation.behaviour.VerticalScrollingBehavior$ScrollDirection
+com/ashokvarma/bottomnavigation/BadgeTextView.java
+ com.ashokvarma.bottomnavigation.BadgeTextView
+com/ashokvarma/bottomnavigation/TextBadgeItem.java
+ com.ashokvarma.bottomnavigation.TextBadgeItem
+com/ashokvarma/bottomnavigation/BottomNavigationItem.java
+ com.ashokvarma.bottomnavigation.BottomNavigationItem
