@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="上架房间"
+            android:text="修改房间信息"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
@@ -104,7 +104,7 @@
             android:gravity="center_vertical"
             android:hint="请输入原件"
             android:inputType="numberDecimal"
-            android:text="(单位：1/晚)"
+            android:text="(单位：天/每晚)"
             android:textColor="@color/red"
             android:textSize="15sp" />
 
@@ -131,7 +131,7 @@
 
         <EditText
             android:id="@+id/discount_price"
-            android:layout_width="100dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
             android:hint="请输入折扣价"
@@ -175,7 +175,6 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <ImageView
-
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="180dp"
@@ -192,13 +191,13 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/push"
+            android:id="@+id/update"
             android:layout_width="320dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:background="@drawable/btn_bg"
-            android:text="上架"
+            android:text="修改"
             android:textSize="17sp" />
 
 

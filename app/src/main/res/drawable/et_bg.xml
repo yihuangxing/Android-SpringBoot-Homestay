@@ -2,18 +2,18 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <!-- 边框颜色值 -->
-    <item>
-        <shape>
-            <solid android:color="@color/white" />
-        </shape>
-    </item>
     <!-- 主体背景颜色值 -->
     <item
-        android:height="1dp"
         android:gravity="bottom">
         <shape>
             <solid android:color="@color/purple_700" />
         </shape>
     </item>
+    <!-- 边框颜色值 -->
+    <item android:bottom="1dp">
+        <shape>
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+
 </layer-list>

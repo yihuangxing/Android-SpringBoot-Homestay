@@ -7,10 +7,10 @@
 
 
     <androidx.cardview.widget.CardView
-        app:cardCornerRadius="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"
+        app:cardCornerRadius="8dp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
 
@@ -34,6 +34,7 @@
                     app:civ_border_width="2dp" />
 
                 <TextView
+                    android:id="@+id/create_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -44,7 +45,7 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <ImageView
-                android:id="@+id/image"
+                android:id="@+id/house_img"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:layout_marginLeft="10dp"
@@ -59,6 +60,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginRight="10dp">
+
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
@@ -76,7 +78,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/adress"
+                        android:id="@+id/address"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/title"
@@ -88,7 +90,6 @@
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
-
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -98,14 +99,16 @@
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:id="@+id/price_view"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right">
 
                         <TextView
+                            android:id="@+id/discount_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="￥399"
                             android:textColor="#FF4500"
-                            android:textSize="18sp"
+                            android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -117,10 +120,11 @@
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <TextView
+                        android:id="@+id/original_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/price_view"
-                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="right"
                         android:text="原价498"
                         android:textSize="12sp" />
                 </androidx.appcompat.widget.LinearLayoutCompat>

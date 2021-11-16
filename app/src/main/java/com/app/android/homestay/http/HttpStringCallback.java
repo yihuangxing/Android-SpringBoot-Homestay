@@ -18,13 +18,15 @@ public abstract class HttpStringCallback extends StringCallback {
     private Activity mActivity;
 
     protected HttpStringCallback(Activity activity) {
-        this.mActivity = activity;
-        dialog = new ProgressDialog(activity);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setCanceledOnTouchOutside(false);
-        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        dialog.setMessage("请求网络中...");
-        dialog.show();
+        if (null != activity) {
+            this.mActivity = activity;
+            dialog = new ProgressDialog(activity);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            dialog.setMessage("请求网络中...");
+            dialog.show();
+        }
     }
 
     @Override
@@ -59,8 +61,10 @@ public abstract class HttpStringCallback extends StringCallback {
 
     @Override
     public void onFinish() {
-        if (dialog != null && dialog.isShowing() && !mActivity.isFinishing()) {
-            dialog.dismiss();
+        if (mActivity != null) {
+            if (dialog != null && dialog.isShowing() && !mActivity.isFinishing()) {
+                dialog.dismiss();
+            }
         }
     }
 

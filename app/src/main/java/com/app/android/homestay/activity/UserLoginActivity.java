@@ -48,8 +48,6 @@ public class UserLoginActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(mActivity, UserMainActivity.class);
-                startActivity(intent);
                 String name = username.getText().toString().trim();
                 String pwd = password.getText().toString().trim();
                 if (TextUtils.isEmpty(name)) {

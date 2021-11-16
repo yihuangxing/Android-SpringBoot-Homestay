@@ -1,5 +1,6 @@
 package com.app.android.homestay.activity;
 
+
 import android.graphics.Color;
 import android.text.TextUtils;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.app.android.homestay.Constants;
 import com.app.android.homestay.GlideEngine;
 import com.app.android.homestay.R;
 import com.app.android.homestay.base.BaseActivity;
+import com.app.android.homestay.bean.HouseInfo;
 import com.app.android.homestay.bean.JsonBean;
 import com.app.android.homestay.http.HttpStringCallback;
 import com.app.android.homestay.utils.GetJsonDataUtil;
@@ -24,6 +26,7 @@ import com.luck.picture.lib.config.PictureMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.listener.OnResultCallbackListener;
 import com.lzy.okgo.OkGo;
+import com.lzy.okgo.request.PostRequest;
 
 import org.json.JSONArray;
 
@@ -31,43 +34,51 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 上架房间
- */
-public class AdminAddHouseActivity extends BaseActivity {
-    private TextView address;
+public class AdminUpdateHouseActivity extends BaseActivity {
+    private HouseInfo mHouseInfo;
     private EditText introduce;
     private EditText original_price;
     private EditText discount_price;
-    private String compressPath = "";
-    private ImageView imageview;
+    private TextView address;
+    private ImageView image;
+
 
     private List<JsonBean> options1Items = new ArrayList<>();
     private ArrayList<ArrayList<String>> options2Items = new ArrayList<>();
     private ArrayList<ArrayList<ArrayList<String>>> options3Items = new ArrayList<>();
 
+
+    private String compressPath;
+
+
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_admin_add_house;
+        return R.layout.activity_admin_update_house;
     }
 
     @Override
     protected void initView() {
-        address = findViewById(R.id.address);
-        imageview = findViewById(R.id.image);
         introduce = findViewById(R.id.introduce);
         original_price = findViewById(R.id.original_price);
         discount_price = findViewById(R.id.discount_price);
-
+        address = findViewById(R.id.address);
+        image = findViewById(R.id.image);
 
     }
 
     @Override
     protected void setListener() {
-
-        findViewById(R.id.push).setOnClickListener(new View.OnClickListener() {
+        address.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                showPickerView(address);
+            }
+        });
+
+        findViewById(R.id.update).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
                 String introduceStr = introduce.getText().toString().trim();
                 String originalprice = original_price.getText().toString().trim();
                 String discountprice = discount_price.getText().toString().trim();
@@ -80,28 +91,21 @@ public class AdminAddHouseActivity extends BaseActivity {
                     BaseToast("请输入折扣价");
                 } else if (TextUtils.isEmpty(addressStr)) {
                     BaseToast("请输入地址");
-                } else if (TextUtils.isEmpty(compressPath)) {
-                    BaseToast("请上传图片");
                 } else {
-                    push(introduceStr, originalprice, discountprice, addressStr, compressPath);
+                    if (mHouseInfo != null) {
+                        update(mHouseInfo.getUid(), introduceStr, originalprice, discountprice, addressStr, compressPath);
+                    }
+
                 }
             }
+
+
         });
 
-
-
-
-        address.setOnClickListener(new View.OnClickListener() {
+        image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showPickerView(address);
-            }
-        });
-
-        findViewById(R.id.image).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PictureSelector.create(AdminAddHouseActivity.this)
+                PictureSelector.create(AdminUpdateHouseActivity.this)
                         .openGallery(PictureMimeType.ofImage())
                         .imageEngine(GlideEngine.createGlideEngine())
                         .isCompress(true)
@@ -112,7 +116,7 @@ public class AdminAddHouseActivity extends BaseActivity {
                                 if (result != null && result.size() > 0) {
                                     LocalMedia localMedia = result.get(0);
                                     compressPath = localMedia.getCompressPath();
-                                    GlideEngine.createGlideEngine().loadImage(AdminAddHouseActivity.this, compressPath, imageview);
+                                    GlideEngine.createGlideEngine().loadImage(AdminUpdateHouseActivity.this, compressPath, image);
                                 }
 
 
@@ -125,38 +129,53 @@ public class AdminAddHouseActivity extends BaseActivity {
                         });
             }
         });
-
     }
 
-    private void push(String introduceStr, String originalprice, String discountprice, String addressStr, String compressPath) {
 
-        OkGo.<String>post(Constants.HOUSE_ADD_URL)
-                .params("introduce", introduceStr)
-                .params("original_price", originalprice)
-                .params("discount_price", discountprice)
-                .params("address", addressStr)
-                .params("file", new File(compressPath))
-                .execute(new HttpStringCallback(this) {
-                    @Override
-                    protected void onSuccess(String msg, String response) {
-                          BaseToast(msg);
-                          setResult(200);
-                          finish();
-                    }
+    private void update(int uid, String introduceStr, String originalprice, String discountprice, String addressStr, String compressPath) {
 
-                    @Override
-                    protected void onError(String response) {
+        PostRequest<String> post = OkGo.<String>post(Constants.HOUSE_UPDATE_URL);
+        post.params("uid", uid);
+        post.params("introduce", introduceStr);
+        post.params("original_price", originalprice);
+        post.params("discount_price", discountprice);
+        post.params("address", addressStr);
+        if (!TextUtils.isEmpty(compressPath)) {
+            post.params("file", new File(compressPath));
+        }
+        post.execute(new HttpStringCallback(this) {
+            @Override
+            protected void onSuccess(String msg, String response) {
+                BaseToast(msg);
+                setResult(200);
+                finish();
+            }
 
-                    }
-                });
+            @Override
+            protected void onError(String response) {
+                BaseToast(response);
+            }
+        });
 
 
     }
 
     @Override
     protected void initData() {
+
+        mHouseInfo = (HouseInfo) getIntent().getSerializableExtra("info");
+        if (mHouseInfo != null) {
+            introduce.setText(mHouseInfo.getIntroduce());
+            original_price.setText(mHouseInfo.getOriginal_price());
+            discount_price.setText(mHouseInfo.getDiscount_price());
+            address.setText(mHouseInfo.getAddress());
+            GlideEngine.createGlideEngine().loadImage(this, mHouseInfo.getHouse_img(), image);
+        }
+
         initJsonData();
+
     }
+
 
     private void initJsonData() {
 
@@ -225,6 +244,7 @@ public class AdminAddHouseActivity extends BaseActivity {
         }
         return detail;
     }
+
 
     private void showPickerView(TextView textView) {
 

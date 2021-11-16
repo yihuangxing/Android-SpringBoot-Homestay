@@ -99,6 +99,7 @@
             android:digits="qwertyuiop1234567890asdfghjklmnbvcxz"
             android:hint="请输入密码"
             android:text="123456"
+            android:inputType="textPassword"
             android:textColor="@color/text_color_2"
             android:textSize="15sp" />
 

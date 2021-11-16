@@ -66,6 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
+            android:text="yihuangxing"
             android:digits="1234567890qwertyuiopasdfghjklzxcvbnm"
             android:hint="请输入用户名"
             android:textColor="@color/text_color_2"
@@ -101,6 +102,8 @@
             android:background="@null"
             android:digits="qwertyuiop1234567890asdfghjklmnbvcxz"
             android:hint="请输入密码"
+            android:text="123456"
+            android:inputType="textPassword"
             android:textColor="@color/text_color_2"
             android:textSize="15sp" />
 
