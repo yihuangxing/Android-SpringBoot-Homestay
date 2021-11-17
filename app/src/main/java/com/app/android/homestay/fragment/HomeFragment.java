@@ -8,7 +8,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.app.android.homestay.Constants;
+import com.app.android.homestay.Config;
 import com.app.android.homestay.R;
 import com.app.android.homestay.adapter.HomeAdapter;
 import com.app.android.homestay.base.BaseFragment;
@@ -22,16 +22,10 @@ import com.lzy.okgo.OkGo;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
 public class HomeFragment extends BaseFragment {
 
     private RecyclerView recyclerview;
     private HomeAdapter mHomeAdapter;
-    private List<HouseInfo> mStringList = new ArrayList<>();
-
 
     @Override
     protected int getLayoutId() {
@@ -56,7 +50,7 @@ public class HomeFragment extends BaseFragment {
                     public void onClick(DialogInterface dialog, int which) {
 
                         HouseInfo houseInfo = mHomeAdapter.getData().get(position);
-                        addOrder(Constants.getUserInfo().getUsername(), houseInfo);
+                        addOrder(Config.getUserInfo().getUsername(), houseInfo);
 
                     }
                 });
@@ -78,7 +72,7 @@ public class HomeFragment extends BaseFragment {
     }
 
     @Override
-    protected void initData() {
+    public void initData() {
 
         recyclerview.setAdapter(mHomeAdapter);
 
@@ -87,7 +81,7 @@ public class HomeFragment extends BaseFragment {
     }
 
     private void hostAll() {
-        OkGo.<String>get(Constants.HOUSE_LIST_URL)
+        OkGo.<String>get(Config.HOUSE_LIST_URL)
                 .execute(new HttpStringCallback(getActivity()) {
                     @Override
                     protected void onSuccess(String msg, String response) {
@@ -106,7 +100,7 @@ public class HomeFragment extends BaseFragment {
 
     private void addOrder(String username, HouseInfo houseInfo) {
 
-        OkGo.<String>post(Constants.ADD_ORDER_URL)
+        OkGo.<String>post(Config.ADD_ORDER_URL)
                 .params("username", username)
                 .params("introduce", houseInfo.getIntroduce())
                 .params("original_price", houseInfo.getOriginal_price())

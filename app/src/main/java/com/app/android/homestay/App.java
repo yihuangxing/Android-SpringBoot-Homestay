@@ -23,7 +23,7 @@ public class App extends Application {
 
     private void initHttp() {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("======");
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("okgo");
         //log打印级别，决定了log显示的详细程度
         loggingInterceptor.setPrintLevel(HttpLoggingInterceptor.Level.BODY);
         //log颜色级别，决定了log在控制台显示的颜色

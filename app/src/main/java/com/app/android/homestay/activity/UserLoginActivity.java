@@ -5,8 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 
-import com.app.android.homestay.AdminMainActivity;
-import com.app.android.homestay.Constants;
+import com.app.android.homestay.Config;
 import com.app.android.homestay.R;
 import com.app.android.homestay.UserMainActivity;
 import com.app.android.homestay.base.BaseActivity;
@@ -69,7 +68,7 @@ public class UserLoginActivity extends BaseActivity {
     }
 
     private void login(String username, String pwd) {
-        OkGo.<String>get(Constants.LOGIN_URL)
+        OkGo.<String>get(Config.LOGIN_URL)
                 .params("username", username)
                 .params("password", pwd)
                 .params("identity", 0)
@@ -77,7 +76,7 @@ public class UserLoginActivity extends BaseActivity {
                     @Override
                     protected void onSuccess(String msg, String response) {
                         UserInfo userInfo = GsonUtils.parseJson(response, UserInfo.class);
-                        Constants.setUserInfo(userInfo);
+                        Config.setUserInfo(userInfo);
                         startActivity(new Intent(mActivity, UserMainActivity.class));
                         BaseToast(msg);
                         finish();

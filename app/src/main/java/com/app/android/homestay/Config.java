@@ -3,7 +3,7 @@ package com.app.android.homestay;
 
 import com.app.android.homestay.bean.UserInfo;
 
-public class Constants {
+public class Config {
 
     public final static String BASE_URL = "http://192.168.14.13:8080";
 
@@ -40,7 +40,35 @@ public class Constants {
 
 
     //查询订单
-    public final static String QUERY_ORDER_URL =BASE_URL+"/order/query";
+    public final static String QUERY_ORDER_URL = BASE_URL + "/order/query";
+
+
+    //查询注册用户
+    public final static String REGISTER_USER_URL = BASE_URL + "/user/query";
+
+
+    //修改密码
+    public final static String UPDATE_PWD_URL = BASE_URL + "/user/pwd";
+
+
+    //删除订单
+    public final static String ORDER_DEL_URL = BASE_URL + "/order/del";
+
+
+    //收藏
+    public final static String COLLECTION_URL = BASE_URL + "/collection/add";
+
+
+    //收藏列表
+    public final static String COLLECTION_LIST_URL = BASE_URL + "/collection/query";
+
+
+    //取消收藏
+    public final static String CANCEL_COLLECTION_URL = BASE_URL + "/collection/del";
+
+
+    //修改用户信息
+    public final static String EDIT_USER_URL = BASE_URL + "/user/edit";
 
 
 }

@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.app.android.homestay.Constants;
+import com.app.android.homestay.Config;
 import com.app.android.homestay.GlideEngine;
 import com.app.android.homestay.R;
 import com.app.android.homestay.base.BaseActivity;
@@ -134,7 +134,7 @@ public class AdminUpdateHouseActivity extends BaseActivity {
 
     private void update(int uid, String introduceStr, String originalprice, String discountprice, String addressStr, String compressPath) {
 
-        PostRequest<String> post = OkGo.<String>post(Constants.HOUSE_UPDATE_URL);
+        PostRequest<String> post = OkGo.<String>post(Config.HOUSE_UPDATE_URL);
         post.params("uid", uid);
         post.params("introduce", introduceStr);
         post.params("original_price", originalprice);

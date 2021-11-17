@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.app.android.homestay.Constants;
+import com.app.android.homestay.Config;
 import com.app.android.homestay.R;
 import com.app.android.homestay.base.BaseActivity;
 import com.app.android.homestay.http.HttpStringCallback;
@@ -93,7 +93,7 @@ public class RegisterActivity extends BaseActivity {
 
 
     private void register(String username, String password, String mobile, String email, int identity) {
-        OkGo.<String>get(Constants.REGISTER_URL)
+        OkGo.<String>get(Config.REGISTER_URL)
                 .params("username", username)
                 .params("password", password)
                 .params("mobile", mobile)

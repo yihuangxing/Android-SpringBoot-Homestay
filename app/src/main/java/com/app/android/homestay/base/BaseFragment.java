@@ -45,7 +45,7 @@ public abstract class BaseFragment extends Fragment {
     protected abstract void setListener();
 
 
-    protected abstract void initData();
+    public abstract void initData();
 
 
     protected void BaseToast(String msg) {

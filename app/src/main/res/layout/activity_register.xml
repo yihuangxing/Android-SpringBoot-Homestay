@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -12,14 +13,21 @@
         android:layout_height="wrap_content"
         android:background="@color/teal_200"
         app:navigationIcon="@mipmap/back"
-        app:titleTextColor="@color/white" />
+        app:titleTextColor="@color/white">
+
+    </androidx.appcompat.widget.Toolbar>
 
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:layout_centerVertical="true"
         android:layout_gravity="center_horizontal"
-        android:src="@mipmap/logo" />
+        android:layout_margin="40dp"
+        android:src="@mipmap/logo"
+        app:civ_border_color="@color/purple_700"
+        app:civ_border_width="2dp" />
 
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -50,10 +58,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
-                android:text="yihuangxing"
                 android:digits="qwertyuiopasdfghjklzxcvbnm1234567890"
                 android:hint="请输入用户名"
                 android:paddingLeft="10dp"
+                android:text="yihuangxing"
                 android:textColor="#333"
                 android:textSize="15sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -80,12 +88,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
-                android:text="123456"
                 android:digits="qwertyuiopasdfghjklzxcvbnm1234567890"
                 android:gravity="center_vertical"
-                android:inputType="textPassword"
                 android:hint="请输入6-16位字母+数字"
+                android:inputType="textPassword"
                 android:paddingLeft="10dp"
+                android:text="123456"
                 android:textColor="#333"
                 android:textSize="15sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -115,8 +123,8 @@
                 android:digits="qwertyuiopasdfghjklzxcvbnm1234567890"
                 android:gravity="center_vertical"
                 android:hint="请输入6-16位字母+数字"
-                android:paddingLeft="10dp"
                 android:inputType="textPassword"
+                android:paddingLeft="10dp"
                 android:text="123456"
                 android:textColor="#333"
                 android:textSize="15sp" />
@@ -148,8 +156,8 @@
                 android:gravity="center_vertical"
                 android:hint="请输入手机号"
                 android:maxLength="11"
-                android:text="13764664731"
                 android:paddingLeft="10dp"
+                android:text="13764664731"
                 android:textColor="#333"
                 android:textSize="15sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -179,9 +187,9 @@
                 android:background="@null"
                 android:gravity="center_vertical"
                 android:hint="请输入邮箱地址"
-                android:text="12345678@qq.com"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="10dp"
+                android:text="12345678@qq.com"
                 android:textColor="#333"
                 android:textSize="15sp" />
 

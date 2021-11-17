@@ -73,6 +73,7 @@ public class UserMainActivity extends BaseActivity implements BottomNavigationBa
                 fragmentTransaction.add(R.id.content, mLikeFragment);
             } else {
                 fragmentTransaction.show(mLikeFragment);
+                mLikeFragment.initData();
             }
         } else if (position == 2) {
             if (mOrderFragment == null) {

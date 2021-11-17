@@ -11,8 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.app.android.homestay.AdminMainActivity;
-import com.app.android.homestay.Constants;
+import com.app.android.homestay.Config;
 import com.app.android.homestay.R;
 import com.app.android.homestay.adapter.AdminHouseListAdapter;
 import com.app.android.homestay.base.BaseActivity;
@@ -118,7 +117,7 @@ public class AdminHouseListActivity extends BaseActivity {
 
 
     private void hostAll() {
-        OkGo.<String>get(Constants.HOUSE_LIST_URL)
+        OkGo.<String>get(Config.HOUSE_LIST_URL)
                 .execute(new HttpStringCallback(this) {
                     @Override
                     protected void onSuccess(String msg, String response) {
@@ -139,7 +138,7 @@ public class AdminHouseListActivity extends BaseActivity {
 
     private void del(int uid, int position) {
 
-        OkGo.<String>get(Constants.DEL_HOUSE_URL)
+        OkGo.<String>get(Config.DEL_HOUSE_URL)
                 .params("uid", uid)
                 .execute(new HttpStringCallback(null) {
                     @Override

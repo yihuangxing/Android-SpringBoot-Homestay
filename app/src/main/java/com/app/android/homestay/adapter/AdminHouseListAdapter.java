@@ -5,7 +5,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.app.android.homestay.Constants;
 import com.app.android.homestay.GlideEngine;
 import com.app.android.homestay.R;
 import com.app.android.homestay.bean.HouseInfo;

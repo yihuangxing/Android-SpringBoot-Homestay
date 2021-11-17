@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:padding="18dp"
-                android:src="@mipmap/like" />
+                android:src="@mipmap/u_like" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
