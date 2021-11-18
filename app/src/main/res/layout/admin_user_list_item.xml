@@ -13,77 +13,94 @@
         app:cardCornerRadius="8dp">
 
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profile_image"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@mipmap/logo"
-                    app:civ_border_color="@color/purple_700"
-                    app:civ_border_width="2dp" />
-
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/profile_image"
-                    android:gravity="center_vertical"
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
 
 
-                    <TextView
-                        android:id="@+id/mobile"
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/logo"
+                        app:civ_border_color="@color/purple_700"
+                        app:civ_border_width="2dp" />
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="手机号：13764664731"
-                        android:textColor="#555"
-                        android:textSize="13sp" />
-
-                    <TextView
-                        android:id="@+id/email"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="邮箱：888888@qq.com"
-                        android:textColor="#555"
-                        android:textSize="13sp" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/profile_image"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
 
 
-            </RelativeLayout>
+                        <TextView
+                            android:id="@+id/mobile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="手机号：13764664731"
+                            android:textColor="#555"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="邮箱：888888@qq.com"
+                            android:textColor="#555"
+                            android:textSize="13sp" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-            <TextView
-                android:id="@+id/username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="#f6f6f6"
-                android:paddingLeft="10dp"
-                android:paddingTop="6dp"
-                android:paddingBottom="10dp"
-                android:text="yihuangxing"
-                android:textColor="#333"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="#f6f6f6"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="10dp"
+                    android:text="yihuangxing"
+                    android:textColor="#333"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <com.othershe.cornerlabelview.CornerLabelView
+                android:id="@+id/cornerLabelView"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentRight="true"
+                app:bg_color="#F95A29"
+                app:position="right_top"
+                app:side_length="100dp"
+                app:text="管理员"
+                app:text_size="14sp" />
+        </RelativeLayout>
 
 
     </androidx.cardview.widget.CardView>

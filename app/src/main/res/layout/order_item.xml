@@ -150,7 +150,7 @@
                     android:layout_marginRight="10dp"
                     android:background="@color/purple_700"
                     android:gravity="center"
-                    android:text="去支付"
+                    android:text="待支付"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
 

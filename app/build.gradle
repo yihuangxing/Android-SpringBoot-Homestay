@@ -51,4 +51,6 @@ dependencies {
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.2.0'
 
     implementation 'com.contrarywind:Android-PickerView:4.1.9'
+
+    implementation 'com.github.Othershe:CornerLabelView:1.0.0'
 }
