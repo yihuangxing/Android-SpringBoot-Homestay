@@ -62,7 +62,7 @@ public abstract class HttpStringCallback extends StringCallback {
     @Override
     public void onFinish() {
         if (mActivity != null) {
-            if (dialog != null && dialog.isShowing() && !mActivity.isFinishing()) {
+            if (dialog != null && dialog.isShowing()) {
                 dialog.dismiss();
             }
         }
