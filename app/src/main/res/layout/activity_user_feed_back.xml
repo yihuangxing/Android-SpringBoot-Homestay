@@ -44,8 +44,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:layout_marginTop="4dp"
+                android:layout_marginRight="16dp"
                 android:backgroundTint="#f5f5f5"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="0dp">
@@ -68,13 +68,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
                 android:gravity="center">
 
                 <TextView
                     android:id="@+id/cancel"
-                    android:layout_width="100dp"
-                    android:layout_height="36dp"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
                     android:background="#f5f5f5"
                     android:gravity="center"
                     android:text="取消"
@@ -83,9 +83,9 @@
 
                 <TextView
                     android:id="@+id/confirm_button"
-                    android:layout_width="100dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="30dp"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
                     android:background="@color/teal_700"
                     android:gravity="center"
                     android:text="提交"

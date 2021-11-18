@@ -22,6 +22,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:padding="16dp"
                 android:text="确定是否支付？"
                 android:textColor="#222"
@@ -34,7 +35,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="扫码支付"
-
                 android:textColor="@color/text_color_2" />
 
 
@@ -58,15 +58,15 @@
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
                 android:gravity="center">
 
                 <TextView
                     android:id="@+id/cancel"
-                    android:layout_width="100dp"
-                    android:layout_height="36dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:background="#f5f5f5"
                     android:gravity="center"
                     android:text="取消"
@@ -75,13 +75,14 @@
 
                 <TextView
                     android:id="@+id/confirm_button"
-                    android:layout_width="100dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="30dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:background="@color/teal_700"
                     android:gravity="center"
                     android:text="确定"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
