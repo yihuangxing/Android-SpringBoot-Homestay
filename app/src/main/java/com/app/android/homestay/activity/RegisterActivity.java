@@ -71,7 +71,7 @@ public class RegisterActivity extends BaseActivity {
                 } else if (!codeStr.equals(code)) {
                     BaseToast("验证码输入错误");
                 } else {
-                    register(name, pwd, phone, emailStr, identity, "这个人很懒，什么都没有留下~");
+                    register(name, pwd, phone, emailStr, identity, "这个家伙很懒，什么都没有留下~");
                 }
             }
         });

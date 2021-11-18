@@ -64,12 +64,67 @@
                 android:src="@mipmap/img_1" />
 
 
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/label_bg"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:text="智能门锁"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/label_bg"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:text="可做饭"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/label_bg"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:text="地主之谊"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/label_bg"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:text="有空调"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
             <TextView
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/image"
-                android:layout_marginTop="10dp"
+                android:layout_below="@id/linearlayout"
                 android:text="解放碑中心/57楼高全景套房"
                 android:textColor="#222"
                 android:textStyle="bold" />

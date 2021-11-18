@@ -19,11 +19,6 @@ import com.lzy.okgo.OkGo;
 
 import org.jetbrains.annotations.NotNull;
 
-/**
- * author : yi...
- * date   : 2021/11/12/0012  20:06
- * desc   :
- */
 public class HomeAdapter extends BaseQuickAdapter<HouseInfo, BaseViewHolder> {
 
     private TextView original_price;
