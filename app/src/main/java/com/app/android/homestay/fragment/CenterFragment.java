@@ -15,6 +15,7 @@ import com.app.android.homestay.Config;
 import com.app.android.homestay.GlideEngine;
 import com.app.android.homestay.R;
 import com.app.android.homestay.activity.UserEditInfoActivity;
+import com.app.android.homestay.activity.UserPayOrderActivity;
 import com.app.android.homestay.activity.UserUpdatePwdActivity;
 import com.app.android.homestay.base.BaseFragment;
 import com.app.android.homestay.bean.UserInfo;
@@ -26,6 +27,7 @@ public class CenterFragment extends BaseFragment {
     private SuperTextView email;
     private SuperTextView mobile;
     private CircleImageView profile_image;
+    private TextView nickname;
 
     @Override
     protected int getLayoutId() {
@@ -38,11 +40,19 @@ public class CenterFragment extends BaseFragment {
         email = mRootView.findViewById(R.id.email);
         mobile = mRootView.findViewById(R.id.mobile);
         profile_image = mRootView.findViewById(R.id.profile_image);
+        nickname = mRootView.findViewById(R.id.nickname);
 
     }
 
     @Override
     protected void setListener() {
+
+        mRootView.findViewById(R.id.paylist).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), UserPayOrderActivity.class));
+            }
+        });
 
         mRootView.findViewById(R.id.menu).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +84,7 @@ public class CenterFragment extends BaseFragment {
                 builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                               getActivity().finish();
+                        getActivity().finish();
                     }
                 });
                 builder.show();
@@ -90,6 +100,8 @@ public class CenterFragment extends BaseFragment {
             username.setText(userInfo.getUsername());
             email.setLeftString("邮箱：" + userInfo.getEmail());
             mobile.setLeftString("手机号：" + userInfo.getMobile());
+            nickname.setText(userInfo.getNickname());
+
             if (TextUtils.isEmpty(userInfo.getAvatar())) {
                 profile_image.setImageResource(R.mipmap.logo);
             } else {

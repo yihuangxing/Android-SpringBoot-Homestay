@@ -29,6 +29,7 @@ public class UserEditInfoActivity extends BaseActivity {
     private TextView username;
     private EditText mobile;
     private EditText email;
+    private TextView nickname;
     private CircleImageView profile_image;
     private String compressPath;
 
@@ -43,6 +44,7 @@ public class UserEditInfoActivity extends BaseActivity {
         mobile = findViewById(R.id.mobile);
         email = findViewById(R.id.email);
         profile_image = findViewById(R.id.profile_image);
+        nickname = findViewById(R.id.nickname);
 
     }
 
@@ -55,14 +57,17 @@ public class UserEditInfoActivity extends BaseActivity {
                 String name = username.getText().toString();
                 String phone = mobile.getText().toString();
                 String emailstr = email.getText().toString();
+                String nickName = nickname.getText().toString();
                 if (TextUtils.isEmpty(phone)) {
                     BaseToast("请输入手机号");
                 } else if (TextUtils.isEmpty(emailstr)) {
                     BaseToast("请输入邮箱");
+                } else if (TextUtils.isEmpty(emailstr)) {
+                    BaseToast("请输入昵称");
                 } else {
                     UserInfo userInfo = Config.getUserInfo();
                     if (userInfo != null) {
-                        editUserInfo(userInfo.getUid(), phone, emailstr);
+                        editUserInfo(userInfo.getUid(), phone, emailstr, nickName);
                     }
 
                 }
@@ -99,13 +104,14 @@ public class UserEditInfoActivity extends BaseActivity {
 
     }
 
-    private void editUserInfo(int uid, String mobile, String emailstr) {
+    private void editUserInfo(int uid, String mobile, String emailstr, String nickname) {
 
         PostRequest<String> post = OkGo.<String>post(Config.EDIT_USER_URL);
         post.params("uid", uid);
         post.params("mobile", mobile);
         post.params("email", emailstr);
         post.params("username", Config.getUserInfo().getUsername());
+        post.params("nickname", nickname);
 
         if (!TextUtils.isEmpty(compressPath)) {
             post.params("file", new File(compressPath));
@@ -114,7 +120,7 @@ public class UserEditInfoActivity extends BaseActivity {
         post.execute(new HttpStringCallback(this) {
             @Override
             protected void onSuccess(String msg, String response) {
-                UserInfo userInfo = GsonUtils.parseJson(response,UserInfo.class);
+                UserInfo userInfo = GsonUtils.parseJson(response, UserInfo.class);
                 Config.setUserInfo(userInfo);
                 BaseToast(msg);
                 setResult(400);
@@ -136,6 +142,7 @@ public class UserEditInfoActivity extends BaseActivity {
             username.setText(userInfo.getUsername());
             mobile.setText(userInfo.getMobile());
             email.setText(userInfo.getEmail());
+            nickname.setText(userInfo.getNickname());
             if (TextUtils.isEmpty(userInfo.getAvatar())) {
                 profile_image.setImageResource(R.mipmap.logo);
             } else {

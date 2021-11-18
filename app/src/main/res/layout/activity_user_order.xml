@@ -5,25 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.FeedBookActivity">
+    tools:context=".fragment.CenterFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/purple_700"
-        app:navigationIcon="@mipmap/back">
-
+        app:navigationIcon="@mipmap/back"
+        app:titleTextColor="@color/white">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="用户反馈"
+            android:text="我的订单"
             android:textColor="@color/white"
-            android:textSize="20sp" />
-
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/pay_item" />
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -70,5 +70,16 @@ public class Config {
     //修改用户信息
     public final static String EDIT_USER_URL = BASE_URL + "/user/edit";
 
+    //支付
+    public final static String PAY_URL = BASE_URL + "/order/pay";
+
+
+    //意见反馈
+    public final static String FEED_ADD_URL = BASE_URL + "/feed/add";
+
+
+    //查询意见反馈
+    public final static String FEED_QUERY_URL = BASE_URL + "/feed/query";
+
 
 }

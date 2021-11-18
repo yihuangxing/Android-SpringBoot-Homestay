@@ -33,6 +33,9 @@ public class CollectionAdapter extends BaseQuickAdapter<CollectionInfo, BaseView
 
     @Override
     protected void convert(@NotNull BaseViewHolder baseViewHolder, CollectionInfo collectionInfo) {
+        if (Config.getUserInfo()!=null){
+            GlideEngine.createGlideEngine().loadImage(getContext().getApplicationContext(), Config.getUserInfo().getAvatar(), baseViewHolder.getView(R.id.profile_image));
+        }
 
         GlideEngine.createGlideEngine().loadImage(getContext().getApplicationContext(), collectionInfo.getHouse_img(), baseViewHolder.getView(R.id.image));
 

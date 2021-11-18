@@ -81,7 +81,7 @@ public class UserMainActivity extends BaseActivity implements BottomNavigationBa
                 fragmentTransaction.add(R.id.content, mOrderFragment);
             } else {
                 fragmentTransaction.show(mOrderFragment);
-                mOrderFragment.queryAll();
+                mOrderFragment.initData();
             }
         } else {
             if (mCenterFragment == null) {

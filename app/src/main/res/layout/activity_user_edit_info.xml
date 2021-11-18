@@ -120,6 +120,39 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="320dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/et_bg"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="昵称："
+                android:textColor="#333"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/nickname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10dp"
+                android:text="xx"
+                android:textColor="#333"
+                android:textSize="15sp" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
         <Button
             android:id="@+id/edit"
             android:layout_width="320dp"

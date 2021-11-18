@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.AdminOrderListActivity">
-
+    tools:context=".activity.AdminFeedBookActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -20,19 +19,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="订单管理"
+            android:text="用户反馈"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
 
     </androidx.appcompat.widget.Toolbar>
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/admin_order_item" />
-
+        tools:listitem="@layout/admin_feed_item" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

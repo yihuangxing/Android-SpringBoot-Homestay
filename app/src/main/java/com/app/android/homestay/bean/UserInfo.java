@@ -8,7 +8,16 @@ public class UserInfo {
     private String email;
     private String avatar;
     private int identity;
+    private String nickname;
 
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 
     public Integer getUid() {
         return uid;

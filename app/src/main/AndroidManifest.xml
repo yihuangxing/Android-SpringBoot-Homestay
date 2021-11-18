@@ -17,7 +17,14 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidSpringBoothomestay">
-        <activity android:name=".activity.UserEditInfoActivity"></activity>
+        <activity
+            android:name=".activity.UserFeedBackActivity"
+            android:theme="@style/progress_dialog_theme" />
+        <activity android:name=".activity.UserPayOrderActivity" />
+        <activity
+            android:name=".activity.PayDialogActivity"
+            android:theme="@style/progress_dialog_theme" />
+        <activity android:name=".activity.UserEditInfoActivity" />
         <activity android:name=".activity.UserUpdatePwdActivity" />
         <activity android:name=".activity.AdminUpdateHouseActivity" />
         <activity
@@ -27,8 +34,8 @@
             android:name=".activity.AdminHouseListActivity"
             android:exported="true" />
         <activity android:name=".activity.AdminUserListActivity" />
-        <activity android:name=".activity.FeedBookActivity" />
-        <activity android:name=".activity.OrderListActivity" />
+        <activity android:name=".activity.AdminFeedBookActivity" />
+        <activity android:name=".activity.AdminOrderListActivity" />
         <activity android:name=".UserMainActivity" />
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.UserLoginActivity" />

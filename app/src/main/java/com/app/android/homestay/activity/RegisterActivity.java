@@ -71,7 +71,7 @@ public class RegisterActivity extends BaseActivity {
                 } else if (!codeStr.equals(code)) {
                     BaseToast("验证码输入错误");
                 } else {
-                    register(name, pwd, phone, emailStr, identity);
+                    register(name, pwd, phone, emailStr, identity, "这个人很懒，什么都没有留下~");
                 }
             }
         });
@@ -92,13 +92,14 @@ public class RegisterActivity extends BaseActivity {
     }
 
 
-    private void register(String username, String password, String mobile, String email, int identity) {
+    private void register(String username, String password, String mobile, String email, int identity, String nickname) {
         OkGo.<String>get(Config.REGISTER_URL)
                 .params("username", username)
                 .params("password", password)
                 .params("mobile", mobile)
                 .params("email", email)
                 .params("identity", identity)
+                .params("nickname", nickname)
                 .execute(new HttpStringCallback(mActivity) {
                     @Override
                     protected void onSuccess(String msg, String response) {

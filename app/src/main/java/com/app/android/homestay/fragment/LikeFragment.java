@@ -45,7 +45,7 @@ public class LikeFragment extends BaseFragment {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle("确定要添加到订单吗？");
-                builder.setMessage("该订单可在订单列表中随时可删除");
+                builder.setMessage("添加后的订单可在订单列表中随时删除");
                 builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

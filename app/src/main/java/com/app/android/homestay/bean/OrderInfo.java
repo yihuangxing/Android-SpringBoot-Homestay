@@ -7,9 +7,27 @@ public class OrderInfo {
     private String introduce;
     private String original_price;   //原件
     private String discount_price;   //折扣价
-    private String house_img;
     private String address;
+    private String house_img;
     private String create_time;
+    private int pay_status;   //0表示未支付  1表示支付成功
+    private String order_num;
+
+    public String getOrder_num() {
+        return order_num;
+    }
+
+    public void setOrder_num(String order_num) {
+        this.order_num = order_num;
+    }
+
+    public int getPay_status() {
+        return pay_status;
+    }
+
+    public void setPay_status(int pay_status) {
+        this.pay_status = pay_status;
+    }
 
     public int getUid() {
         return uid;

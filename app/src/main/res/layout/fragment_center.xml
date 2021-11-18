@@ -34,6 +34,7 @@
 
 
         <RelativeLayout
+            android:id="@+id/rel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -73,6 +74,16 @@
                 android:src="@mipmap/img_jiantou_3" />
         </RelativeLayout>
 
+        <TextView
+            android:id="@+id/nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rel"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="这个人很懒，什么都么有留下~"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
 
     </RelativeLayout>
 
@@ -102,6 +113,7 @@
         android:background="#f5f5f5" />
 
     <com.allen.library.SuperTextView
+        android:id="@+id/paylist"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         app:sLeftTextString="我的订单"

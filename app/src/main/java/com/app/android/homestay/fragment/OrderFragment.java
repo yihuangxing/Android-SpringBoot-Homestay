@@ -2,13 +2,16 @@ package com.app.android.homestay.fragment;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.android.homestay.Config;
 import com.app.android.homestay.R;
+import com.app.android.homestay.activity.PayDialogActivity;
 import com.app.android.homestay.adapter.UserOrderAdapter;
 import com.app.android.homestay.base.BaseFragment;
 import com.app.android.homestay.bean.OderInfoBean;
@@ -41,6 +44,16 @@ public class OrderFragment extends BaseFragment {
     protected void setListener() {
 
         mOrderAdapter = new UserOrderAdapter();
+        mOrderAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(@NonNull @NotNull BaseQuickAdapter<?, ?> adapter, @NonNull @NotNull View view, int position) {
+                OrderInfo orderInfo = mOrderAdapter.getData().get(position);
+                Intent intent = new Intent(getActivity(), PayDialogActivity.class);
+                intent.putExtra("discount_price", orderInfo.getDiscount_price());
+                intent.putExtra("uid", orderInfo.getUid());
+                startActivityForResult(intent, 2000);
+            }
+        });
         mOrderAdapter.setOnItemLongClickListener(new OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(@NonNull @NotNull BaseQuickAdapter adapter, @NonNull @NotNull View view, int position) {
@@ -74,8 +87,10 @@ public class OrderFragment extends BaseFragment {
 
     @Override
     public void initData() {
+        if (null != Config.getUserInfo().getUsername()) {
+            queryAll(Config.getUserInfo().getUsername());
+        }
 
-        queryAll();
     }
 
 
@@ -100,10 +115,10 @@ public class OrderFragment extends BaseFragment {
     }
 
 
-    public void queryAll() {
-        String username = Config.getUserInfo().getUsername();
+    public void queryAll(String username) {
         OkGo.<String>post(Config.QUERY_ORDER_URL)
                 .params("username", username)
+                .params("pay_status", 0)
                 .execute(new HttpStringCallback(getActivity()) {
                     @Override
                     protected void onSuccess(String msg, String response) {
@@ -120,5 +135,13 @@ public class OrderFragment extends BaseFragment {
                     }
                 });
 
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == 2000) {
+            initData();
+        }
     }
 }

@@ -43,13 +43,13 @@ public class UserUpdatePwdActivity extends BaseActivity {
                 String newpwd1str = newpwd1.getText().toString().trim();
                 if (TextUtils.isEmpty(pwd)) {
                     BaseToast("请输入原始密码");
-                } else if (TextUtils.isEmpty(newpwd1str)) {
+                } else if (TextUtils.isEmpty(newpwdstr)) {
                     BaseToast("请输入新密码");
-                } else if (Utils.isMobile(newpwdstr)) {
+                } else if (!Utils.isPwd(newpwdstr)) {
                     BaseToast("密码格式不合法");
                 } else if (TextUtils.isEmpty(newpwd1str)) {
                     BaseToast("请输入确定密码");
-                } else if (Utils.isMobile(newpwd1str)) {
+                } else if (!Utils.isPwd(newpwd1str)) {
                     BaseToast("确定密码不合法");
                 } else if (!newpwdstr.equals(newpwd1str)) {
                     BaseToast("两次密码不一致");
