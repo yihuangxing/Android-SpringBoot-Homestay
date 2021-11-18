@@ -20,6 +20,8 @@ public class AdminFeedBookActivity extends BaseActivity {
 
     private RecyclerView recyclerview;
 
+    private String username;
+
 
     @Override
     protected int getLayoutId() {
@@ -43,11 +45,13 @@ public class AdminFeedBookActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        queryAll();
+        username = getIntent().getStringExtra("username");
+        queryAll(username);
     }
 
-    private void queryAll() {
+    private void queryAll(String username) {
         OkGo.<String>post(Config.FEED_QUERY_URL)
+                .params("username", username)
                 .execute(new HttpStringCallback(this) {
                     @Override
                     protected void onSuccess(String msg, String response) {

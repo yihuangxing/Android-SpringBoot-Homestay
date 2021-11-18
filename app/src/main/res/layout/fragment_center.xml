@@ -119,6 +119,14 @@
         app:sLeftTextString="我的订单"
         app:sRightIconRes="@mipmap/img_jiantou_2" />
 
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/feedback"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        app:sLeftTextString="我的反馈"
+        app:sRightIconRes="@mipmap/img_jiantou_2" />
+
     <com.allen.library.SuperTextView
         android:id="@+id/menu"
         android:layout_width="match_parent"

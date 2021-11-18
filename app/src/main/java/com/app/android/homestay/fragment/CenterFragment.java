@@ -3,6 +3,7 @@ package com.app.android.homestay.fragment;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.allen.library.SuperTextView;
 import com.app.android.homestay.Config;
 import com.app.android.homestay.GlideEngine;
 import com.app.android.homestay.R;
+import com.app.android.homestay.activity.AdminFeedBookActivity;
 import com.app.android.homestay.activity.UserEditInfoActivity;
 import com.app.android.homestay.activity.UserPayOrderActivity;
 import com.app.android.homestay.activity.UserUpdatePwdActivity;
@@ -46,6 +48,19 @@ public class CenterFragment extends BaseFragment {
 
     @Override
     protected void setListener() {
+
+        mRootView.findViewById(R.id.feedback).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Config.getUserInfo() != null) {
+                    Intent intent = new Intent(getActivity(), AdminFeedBookActivity.class);
+                    intent.putExtra("username", Config.getUserInfo().getUsername());
+                    startActivity(intent);
+                }
+
+
+            }
+        });
 
         mRootView.findViewById(R.id.paylist).setOnClickListener(new View.OnClickListener() {
             @Override
