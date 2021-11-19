@@ -12,8 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/purple_700"
-        app:title="喜欢/收藏"
-        app:titleTextColor="@color/white" />
+        app:titleTextColor="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="喜欢/收藏"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
